@@ -1,0 +1,173 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc -i -I
+dpkg-buildpackage: source package libbloom
+dpkg-buildpackage: source version 1.4-1~exp1
+dpkg-buildpackage: source distribution experimental
+dpkg-buildpackage: source changed by Roger Shimizu <rogershimizu@gmail.com>
+ dpkg-source -i -I --before-build libbloom-1.4
+dpkg-buildpackage: host architecture amd64
+dpkg-source: info: applying backport/0001-Fix-shared-library-names-on-OS-X-build.patch
+dpkg-source: info: applying backport/0002-Clean-up-makefile.patch
+dpkg-source: info: applying 0003-Disable-static-linked-library.patch
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+	make -j1 clean
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+rm -rf /home/jiang/flinttest/build-area/libbloom-1.4/build
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+   dh_autoreconf_clean
+   dh_clean
+ dpkg-source -i -I -b libbloom-1.4
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building libbloom using existing ./libbloom_1.4.orig.tar.xz
+dpkg-source: info: building libbloom in libbloom_1.4-1~exp1.debian.tar.xz
+dpkg-source: info: building libbloom in libbloom_1.4-1~exp1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j1
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+mkdir -p /home/jiang/flinttest/build-area/libbloom-1.4/build
+cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4/murmur2 -c murmur2/MurmurHash2.c -o /home/jiang/flinttest/build-area/libbloom-1.4/build/murmurhash2.o
+mkdir -p /home/jiang/flinttest/build-area/libbloom-1.4/build
+cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4/murmur2 -c bloom.c -o /home/jiang/flinttest/build-area/libbloom-1.4/build/bloom.o
+(cd /home/jiang/flinttest/build-area/libbloom-1.4/build && \
+    cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now bloom.o murmurhash2.o -shared -lm  \
+	-Wl,-soname,libbloom.so.1 -o libbloom.so.1.4 && \
+	ln -s libbloom.so.1.4 libbloom.so.1 && \
+	ln -s libbloom.so.1 libbloom.so)
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+   dh_auto_test
+	make -j1 test
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4 -c /home/jiang/flinttest/build-area/libbloom-1.4/misc/test/test.c -o /home/jiang/flinttest/build-area/libbloom-1.4/build/test.o
+(cd /home/jiang/flinttest/build-area/libbloom-1.4/build && \
+    cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -lm test.o -L/home/jiang/flinttest/build-area/libbloom-1.4/build -Wl,-rpath,/home/jiang/flinttest/build-area/libbloom-1.4/build -lbloom -o test-libbloom)
+cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -I/home/jiang/flinttest/build-area/libbloom-1.4 -c /home/jiang/flinttest/build-area/libbloom-1.4/misc/test/basic.c -o /home/jiang/flinttest/build-area/libbloom-1.4/build/basic.o
+(cd /home/jiang/flinttest/build-area/libbloom-1.4/build && \
+    cc -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -I/usr/include/x86_64-linux-gnu -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -O3 -m64 -std=c99 -fPIC -DBLOOM_VERSION=1.4 -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -lm basic.o -L/home/jiang/flinttest/build-area/libbloom-1.4/build -Wl,-rpath,/home/jiang/flinttest/build-area/libbloom-1.4/build -lbloom -o test-basic)
+/home/jiang/flinttest/build-area/libbloom-1.4/build/test-basic
+----- Basic tests with static library -----
+bloom at 0x7fff48b76290 not initialized!
+bloom at 0x7fff48b76290 not initialized!
+bloom at 0x7fff48b76290
+ ->entries = 102
+ ->error = 0.100000
+ ->bits = 488
+ ->bits per elem = 4.792529
+ ->bytes = 61
+ ->hash functions = 4
+----- DONE Basic tests with static library -----
+/home/jiang/flinttest/build-area/libbloom-1.4/build/test-libbloom
+----- Running basic tests -----
+----- basic -----
+bloom at 0x7ffc7a6f3de0 not initialized!
+bloom at 0x7ffc7a6f3de0 not initialized!
+bloom at 0x7ffc7a6f3de0
+ ->entries = 102
+ ->error = 0.100000
+ ->bits = 488
+ ->bits per elem = 4.792529
+ ->bytes = 61
+ ->hash functions = 4
+----- add_random(10, 0.100000, 10, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3ce0
+ ->entries = 10
+ ->error = 0.100000
+ ->bits = 47
+ ->bits per elem = 4.792529
+ ->bytes = 6
+ ->hash functions = 4
+entries: 10, error: 0.100000, count: 10, coll: 0, error: 0.000000, bytes: 6
+----- add_random(10000, 0.100000, 10000, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3ce0
+ ->entries = 10000
+ ->error = 0.100000
+ ->bits = 47925
+ ->bits per elem = 4.792529
+ ->bytes = 5991
+ ->hash functions = 4
+entries: 10000, error: 0.100000, count: 10000, coll: 299, error: 0.029900, bytes: 5991
+----- add_random(10000, 0.010000, 10000, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3ce0
+ ->entries = 10000
+ ->error = 0.010000
+ ->bits = 95850
+ ->bits per elem = 9.585058
+ ->bytes = 11982
+ ->hash functions = 7
+entries: 10000, error: 0.010000, count: 10000, coll: 15, error: 0.001500, bytes: 11982
+----- add_random(10000, 0.001000, 10000, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3da0
+ ->entries = 10000
+ ->error = 0.001000
+ ->bits = 143775
+ ->bits per elem = 14.377588
+ ->bytes = 17972
+ ->hash functions = 10
+entries: 10000, error: 0.001000, count: 10000, coll: 0, error: 0.000000, bytes: 17972
+----- add_random(10000, 0.000100, 10000, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3ce0
+ ->entries = 10000
+ ->error = 0.000100
+ ->bits = 191701
+ ->bits per elem = 19.170117
+ ->bytes = 23963
+ ->hash functions = 14
+entries: 10000, error: 0.000100, count: 10000, coll: 0, error: 0.000000, bytes: 23963
+----- add_random(1000000, 0.000100, 1000000, 0, 1, 32, 1) -----
+bloom at 0x7ffc7a6f3ce0
+ ->entries = 1000000
+ ->error = 0.000100
+ ->bits = 19170116
+ ->bits per elem = 19.170117
+ ->bytes = 2396265
+ ->hash functions = 14
+entries: 1000000, error: 0.000100, count: 1000000, coll: 6, error: 0.000006, bytes: 2396265
+
+Brought to you by libbloom-1.4
+----- DONE Running basic tests -----
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+mkdir -p usr/lib/x86_64-linux-gnu
+cp -a build/libbloom.so* usr/lib/x86_64-linux-gnu/
+dh_auto_install
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libbloom-1.4'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'libbloom-dev' in '../libbloom-dev_1.4-1~exp1_amd64.deb'.
+dpkg-deb: building package 'libbloom1' in '../libbloom1_1.4-1~exp1_amd64.deb'.
+ dpkg-genchanges  >../libbloom_1.4-1~exp1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source -i -I --after-build libbloom-1.4
+dpkg-source: info: unapplying 0003-Disable-static-linked-library.patch
+dpkg-source: info: unapplying backport/0002-Clean-up-makefile.patch
+dpkg-source: info: unapplying backport/0001-Fix-shared-library-names-on-OS-X-build.patch
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: libbloom changes: bad-distribution-in-changes-file experimental
+W: libbloom source: newer-standards-version 3.9.8 (current is 3.9.7)
+Finished running lintian.

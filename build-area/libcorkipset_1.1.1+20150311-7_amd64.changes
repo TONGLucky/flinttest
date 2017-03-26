@@ -1,0 +1,47 @@
+Format: 1.8
+Date: Fri, 06 Jan 2017 01:19:30 +0900
+Source: libcorkipset
+Binary: libcorkipset-utils libcorkipset-dev libcorkipset1 libcorkipset-doc
+Architecture: source amd64 all
+Version: 1.1.1+20150311-7
+Distribution: unstable
+Urgency: medium
+Maintainer: Roger Shimizu <rogershimizu@gmail.com>
+Changed-By: Roger Shimizu <rogershimizu@gmail.com>
+Description:
+ libcorkipset-dev - C library to store sets/maps of IP address (development files)
+ libcorkipset-doc - C library to store sets/maps of IP address (documentation files)
+ libcorkipset-utils - C library to store sets/maps of IP address (utility files)
+ libcorkipset1 - C library to store sets/maps of IP address
+Changes:
+ libcorkipset (1.1.1+20150311-7) unstable; urgency=medium
+ .
+   * debian/rules:
+     - Fix typo in script.
+   * debian/control:
+     - Remove Multi-Arch for package libcorkipset-utils
+     - Set package libcorkipset-doc as "Multi-Arch: foreign"
+       based on wiki: https://wiki.debian.org/MultiArch/Hints
+   * debian/copyright:
+     - Update copyright year.
+Checksums-Sha1:
+ 57d5c06bffd157253ee4eea568051ebe1114e69e 1316 libcorkipset_1.1.1+20150311-7.dsc
+ 139ee4b724d7f7f029634284d5be518a029ecca4 12840 libcorkipset_1.1.1+20150311-7.debian.tar.xz
+ 85e42b5d98099152a0634519fd7141fb04e990cb 9844 libcorkipset-dev_1.1.1+20150311-7_amd64.deb
+ 42a22d7a199fe1c02a3f70fd7a2af2a65a2d35f6 34684 libcorkipset-doc_1.1.1+20150311-7_all.deb
+ 0b6d009a5f40b5b18770555c8d24d626f8ee40e0 15908 libcorkipset-utils_1.1.1+20150311-7_amd64.deb
+ 055731f5b9c85080b42f541bba543d95084cd77a 14494 libcorkipset1_1.1.1+20150311-7_amd64.deb
+Checksums-Sha256:
+ c9064edb877ec9c0b334b4566f3c29b4fb6c8b399c3b3b20f6d0ec5dcceff280 1316 libcorkipset_1.1.1+20150311-7.dsc
+ 53b01102cb00b064a593052df5aed371af1d4924fac0e20ee86c0f14940f2be6 12840 libcorkipset_1.1.1+20150311-7.debian.tar.xz
+ 9fcf681bf133fd107d9430e02d7147fe21dbabc1764e08fa160d89c1778b0167 9844 libcorkipset-dev_1.1.1+20150311-7_amd64.deb
+ 2e47bebdcd5f291cf6438723738817b26e4d407dd33fa1cdf1b572604f52090a 34684 libcorkipset-doc_1.1.1+20150311-7_all.deb
+ 6ad2f6c2d2c1e54dfbb6fe83bc5072d6e7846699048de967cadacee5621d1ee9 15908 libcorkipset-utils_1.1.1+20150311-7_amd64.deb
+ 95ef883ab4840c0248721f4ba13d54e2212c20de5448229fc043e77ae2fc17a3 14494 libcorkipset1_1.1.1+20150311-7_amd64.deb
+Files:
+ bdeb75fe894d17c71cfb3ac4597daa1d 1316 libs optional libcorkipset_1.1.1+20150311-7.dsc
+ f9e9f632df8f4e77792ca40ca706d7c3 12840 libs optional libcorkipset_1.1.1+20150311-7.debian.tar.xz
+ 6e107af756948b5c7e525ffa4882f76c 9844 libdevel optional libcorkipset-dev_1.1.1+20150311-7_amd64.deb
+ be196d5b4ab8a60fd3f23cec2c4e1227 34684 doc optional libcorkipset-doc_1.1.1+20150311-7_all.deb
+ 3c40a441d4781cf4caa12084057849c9 15908 libs optional libcorkipset-utils_1.1.1+20150311-7_amd64.deb
+ cc82ae92b3944b713a17104b920a059a 14494 libs optional libcorkipset1_1.1.1+20150311-7_amd64.deb

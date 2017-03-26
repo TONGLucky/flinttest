@@ -1,0 +1,565 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc -i -I
+dpkg-buildpackage: source package libcorkipset
+dpkg-buildpackage: source version 1.1.1+20150311-7
+dpkg-buildpackage: source distribution unstable
+dpkg-buildpackage: source changed by Roger Shimizu <rogershimizu@gmail.com>
+ dpkg-source -i -I --before-build libcorkipset-1.1.1+20150311
+dpkg-buildpackage: host architecture amd64
+dpkg-source: info: applying 0001-remove-dependency-on-git-command.patch
+dpkg-source: info: applying 0002-fix-build-with-static-libcheck-library.patch
+dpkg-source: info: applying 0003-rename-library-name-SONAME-to-libcorkipset.patch
+dpkg-source: info: applying 0004-update-test-of-python-cram-according-to-libcork.patch
+dpkg-source: info: applying 0005-add-library-multi-arch-support.patch
+dpkg-source: info: applying 0006-Revert-Remove-old-Sphinx-documentation-template.patch
+dpkg-source: info: applying 0007-checkout-sphinx-style-docs-CMakeLists.txt.patch
+dpkg-source: info: applying 0008-setup-docs-folder-and-make-index-works.patch
+dpkg-source: info: applying 0009-support-cmake-threads.patch
+dpkg-source: info: applying 0010-fix-typo-in-src-CMakeLists.txt.patch
+ fakeroot debian/rules clean
+dh clean --with sphinxdoc
+   dh_testdir
+   dh_auto_clean
+   dh_autoreconf_clean
+   dh_clean
+ dpkg-source -i -I -b libcorkipset-1.1.1+20150311
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building libcorkipset using existing ./libcorkipset_1.1.1+20150311.orig.tar.xz
+dpkg-source: info: building libcorkipset in libcorkipset_1.1.1+20150311-7.debian.tar.xz
+dpkg-source: info: building libcorkipset in libcorkipset_1.1.1+20150311-7.dsc
+ debian/rules build
+dh build --with sphinxdoc
+   dh_testdir
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+	cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/x86_64-linux-gnu-gcc
+-- Check for working C compiler: /usr/bin/x86_64-linux-gnu-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/x86_64-linux-gnu-g++
+-- Check for working CXX compiler: /usr/bin/x86_64-linux-gnu-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Checking for module 'libcork >= 0.12.0'
+--   Found libcork , version 0.15.0+ds-11
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Checking for module 'check'
+--   Found check, version 0.10.0
+-- Found PythonInterp: /usr/bin/python (found version "2.7.12") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu
+   dh_auto_build
+	make -j1
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 -B/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f docs/CMakeFiles/doc.dir/build.make docs/CMakeFiles/doc.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/CMakeFiles/doc.dir/DependInfo.cmake --color=
+Scanning dependencies of target doc
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f docs/CMakeFiles/doc.dir/build.make docs/CMakeFiles/doc.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[  2%] Building HTML documentation with Sphinx
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs && /usr/bin/sphinx-build -b html -d /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/_doctrees -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/html
+Running Sphinx v1.3.6
+making output directory...
+loading pickled environment... not yet created
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 5 source files that are out of date
+updating environment: 5 added, 0 changed, 0 removed
+reading sources... [ 20%] commands
+reading sources... [ 40%] file-format
+reading sources... [ 60%] index
+reading sources... [ 80%] maps
+reading sources... [100%] sets
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [ 20%] commands
+writing output... [ 40%] file-format
+writing output... [ 60%] index
+writing output... [ 80%] maps
+writing output... [100%] sets
+
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/maps.rst:136: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/maps.rst:143: WARNING: undefined label: libcork:stream (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/maps.rst:143: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/maps.rst:149: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/sets.rst:207: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/sets.rst:214: WARNING: undefined label: libcork:stream (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/sets.rst:214: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/sets.rst:220: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs/sets.rst:228: WARNING: undefined label: libcork:errors (if the link has no caption the label must precede a section header)
+generating indices... genindex
+writing additional pages... search
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded, 9 warnings.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[  2%] Built target doc
+make -f src/CMakeFiles/libcorkipset.dir/build.make src/CMakeFiles/libcorkipset.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/libcorkipset.dir/DependInfo.cmake --color=
+Scanning dependencies of target libcorkipset
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libcorkipset.dir/build.make src/CMakeFiles/libcorkipset.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[  5%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/general.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/general.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/general.c
+[  7%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/assignments.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/assignments.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/assignments.c
+[ 10%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/basics.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/basics.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/basics.c
+[ 12%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/bdd-iterator.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/bdd-iterator.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/bdd-iterator.c
+[ 15%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/expanded.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/expanded.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/expanded.c
+[ 17%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/reachable.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/reachable.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/reachable.c
+[ 20%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/read.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/read.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/read.c
+[ 23%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/bdd/write.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/bdd/write.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/bdd/write.c
+[ 25%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/map/allocation.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/map/allocation.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/map/allocation.c
+[ 28%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/map/inspection.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/map/inspection.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/map/inspection.c
+[ 30%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/map/ipv4_map.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/map/ipv4_map.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/map/ipv4_map.c
+[ 33%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/map/ipv6_map.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/map/ipv6_map.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/map/ipv6_map.c
+[ 35%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/map/storage.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/map/storage.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/map/storage.c
+[ 38%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/allocation.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/allocation.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/allocation.c
+[ 41%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/inspection.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/inspection.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/inspection.c
+[ 43%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/ipv4_set.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/ipv4_set.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/ipv4_set.c
+[ 46%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/ipv6_set.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/ipv6_set.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/ipv6_set.c
+[ 48%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/iterator.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/iterator.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/iterator.c
+[ 51%] Building C object src/CMakeFiles/libcorkipset.dir/libipset/set/storage.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc  -Dlibcorkipset_EXPORTS -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -fPIC   -Wall -Werror -o CMakeFiles/libcorkipset.dir/libipset/set/storage.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/libipset/set/storage.c
+[ 53%] Linking C shared library libcorkipset.so
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/libcorkipset.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -fPIC -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2   -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now -shared -Wl,-soname,libcorkipset.so.1 -o libcorkipset.so.1.1.0 CMakeFiles/libcorkipset.dir/libipset/general.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/assignments.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/basics.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/bdd-iterator.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/expanded.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/reachable.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/read.c.o CMakeFiles/libcorkipset.dir/libipset/bdd/write.c.o CMakeFiles/libcorkipset.dir/libipset/map/allocation.c.o CMakeFiles/libcorkipset.dir/libipset/map/inspection.c.o CMakeFiles/libcorkipset.dir/libipset/map/ipv4_map.c.o CMakeFiles/libcorkipset.dir/libipset/map/ipv6_map.c.o CMakeFiles/libcorkipset.dir/libipset/map/storage.c.o CMakeFiles/libcorkipset.dir/libipset/set/allocation.c.o CMakeFiles/libcorkipset.dir/libipset/set/inspection.c.o CMakeFiles/libcorkipset.dir/libipset/set/ipv4_set.c.o CMakeFiles/libcorkipset.dir/libipset/set/ipv6_set.c.o CMakeFiles/libcorkipset.dir/libipset/set/iterator.c.o CMakeFiles/libcorkipset.dir/libipset/set/storage.c.o -lcork 
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_symlink_library libcorkipset.so.1.1.0 libcorkipset.so.1 libcorkipset.so
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 53%] Built target libcorkipset
+make -f src/CMakeFiles/ipsetdot.dir/build.make src/CMakeFiles/ipsetdot.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetdot.dir/DependInfo.cmake --color=
+Scanning dependencies of target ipsetdot
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetdot.dir/build.make src/CMakeFiles/ipsetdot.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 56%] Building C object src/CMakeFiles/ipsetdot.dir/ipsetdot/ipsetdot.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/ipsetdot.dir/ipsetdot/ipsetdot.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/ipsetdot/ipsetdot.c
+[ 58%] Linking C executable ipsetdot
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/ipsetdot.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/ipsetdot.dir/ipsetdot/ipsetdot.c.o  -o ipsetdot -rdynamic libcorkipset.so.1.1.0 -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src: 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 58%] Built target ipsetdot
+make -f src/CMakeFiles/ipsetcat.dir/build.make src/CMakeFiles/ipsetcat.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetcat.dir/DependInfo.cmake --color=
+Scanning dependencies of target ipsetcat
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetcat.dir/build.make src/CMakeFiles/ipsetcat.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 61%] Building C object src/CMakeFiles/ipsetcat.dir/ipsetcat/ipsetcat.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/ipsetcat.dir/ipsetcat/ipsetcat.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/ipsetcat/ipsetcat.c
+[ 64%] Linking C executable ipsetcat
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/ipsetcat.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/ipsetcat.dir/ipsetcat/ipsetcat.c.o  -o ipsetcat -rdynamic libcorkipset.so.1.1.0 -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src: 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 64%] Built target ipsetcat
+make -f src/CMakeFiles/ipsetbuild.dir/build.make src/CMakeFiles/ipsetbuild.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetbuild.dir/DependInfo.cmake --color=
+Scanning dependencies of target ipsetbuild
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetbuild.dir/build.make src/CMakeFiles/ipsetbuild.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 66%] Building C object src/CMakeFiles/ipsetbuild.dir/ipsetbuild/ipsetbuild.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/include -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/ipsetbuild.dir/ipsetbuild/ipsetbuild.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src/ipsetbuild/ipsetbuild.c
+[ 69%] Linking C executable ipsetbuild
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/ipsetbuild.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/ipsetbuild.dir/ipsetbuild/ipsetbuild.c.o  -o ipsetbuild -rdynamic libcorkipset.so.1.1.0 -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src: 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 69%] Built target ipsetbuild
+make -f examples/CMakeFiles/ipv4-set-size.dir/build.make examples/CMakeFiles/ipv4-set-size.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/examples /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples/CMakeFiles/ipv4-set-size.dir/DependInfo.cmake --color=
+Scanning dependencies of target ipv4-set-size
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f examples/CMakeFiles/ipv4-set-size.dir/build.make examples/CMakeFiles/ipv4-set-size.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 71%] Building C object examples/CMakeFiles/ipv4-set-size.dir/ipv4-set-size.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/examples/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/ipv4-set-size.dir/ipv4-set-size.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/examples/ipv4-set-size.c
+[ 74%] Linking C executable ipv4-set-size
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples && /usr/bin/cmake -E cmake_link_script CMakeFiles/ipv4-set-size.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/ipv4-set-size.dir/ipv4-set-size.c.o  -o ipv4-set-size -rdynamic -lcork ../src/libcorkipset.so.1.1.0 -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 74%] Built target ipv4-set-size
+make -f tests/CMakeFiles/test-ipmap.dir/build.make tests/CMakeFiles/test-ipmap.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-ipmap.dir/DependInfo.cmake --color=
+Scanning dependencies of target test-ipmap
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-ipmap.dir/build.make tests/CMakeFiles/test-ipmap.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 76%] Building C object tests/CMakeFiles/test-ipmap.dir/test-ipmap.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/test-ipmap.dir/test-ipmap.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/test-ipmap.c
+[ 79%] Linking C executable test-ipmap
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-ipmap.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/test-ipmap.dir/test-ipmap.c.o  -o test-ipmap  -L/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src -rdynamic -lcheck_pic -lrt -lm -lsubunit ../src/libcorkipset.so.1.1.0 -lpthread -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src:/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 79%] Built target test-ipmap
+make -f tests/CMakeFiles/test-bdd.dir/build.make tests/CMakeFiles/test-bdd.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-bdd.dir/DependInfo.cmake --color=
+Scanning dependencies of target test-bdd
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-bdd.dir/build.make tests/CMakeFiles/test-bdd.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 82%] Building C object tests/CMakeFiles/test-bdd.dir/test-bdd.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/test-bdd.dir/test-bdd.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/test-bdd.c
+[ 84%] Linking C executable test-bdd
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-bdd.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/test-bdd.dir/test-bdd.c.o  -o test-bdd  -L/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src -rdynamic -lcheck_pic -lrt -lm -lsubunit ../src/libcorkipset.so.1.1.0 -lpthread -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src:/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 84%] Built target test-bdd
+make -f tests/CMakeFiles/test-iterator.dir/build.make tests/CMakeFiles/test-iterator.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-iterator.dir/DependInfo.cmake --color=
+Scanning dependencies of target test-iterator
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-iterator.dir/build.make tests/CMakeFiles/test-iterator.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 87%] Building C object tests/CMakeFiles/test-iterator.dir/test-iterator.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/test-iterator.dir/test-iterator.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/test-iterator.c
+[ 89%] Linking C executable test-iterator
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-iterator.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/test-iterator.dir/test-iterator.c.o  -o test-iterator  -L/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src -rdynamic -lcheck_pic -lrt -lm -lsubunit ../src/libcorkipset.so.1.1.0 -lpthread -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src:/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 89%] Built target test-iterator
+make -f tests/CMakeFiles/test-ipset.dir/build.make tests/CMakeFiles/test-ipset.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-ipset.dir/DependInfo.cmake --color=
+Scanning dependencies of target test-ipset
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-ipset.dir/build.make tests/CMakeFiles/test-ipset.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 92%] Building C object tests/CMakeFiles/test-ipset.dir/test-ipset.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/test-ipset.dir/test-ipset.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/test-ipset.c
+[ 94%] Linking C executable test-ipset
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-ipset.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/test-ipset.dir/test-ipset.c.o  -o test-ipset  -L/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src -rdynamic -lcheck_pic -lrt -lm -lsubunit ../src/libcorkipset.so.1.1.0 -lpthread -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src:/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 94%] Built target test-ipset
+make -f tests/CMakeFiles/test-assignment.dir/build.make tests/CMakeFiles/test-assignment.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-assignment.dir/DependInfo.cmake --color=
+Scanning dependencies of target test-assignment
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-assignment.dir/build.make tests/CMakeFiles/test-assignment.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 97%] Building C object tests/CMakeFiles/test-assignment.dir/test-assignment.c.o
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/x86_64-linux-gnu-gcc   -I/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/../include  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wall -Werror -o CMakeFiles/test-assignment.dir/test-assignment.c.o   -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests/test-assignment.c
+[100%] Linking C executable test-assignment
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests && /usr/bin/cmake -E cmake_link_script CMakeFiles/test-assignment.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc  -g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2    -Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now CMakeFiles/test-assignment.dir/test-assignment.c.o  -o test-assignment  -L/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src -rdynamic -lcheck_pic -lrt -lm -lsubunit ../src/libcorkipset.so.1.1.0 -lpthread -lcork -Wl,-rpath,/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/../src:/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src 
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[100%] Built target test-assignment
+make[2]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+   dh_auto_test
+	make -j1 test ARGS\+=-j1
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+Running tests...
+/usr/bin/ctest --force-new-ctest-process -j1
+Test project /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu
+    Start 1: test-assignment
+1/5 Test #1: test-assignment ..................   Passed    0.00 sec
+    Start 2: test-bdd
+2/5 Test #2: test-bdd .........................   Passed    0.01 sec
+    Start 3: test-ipmap
+3/5 Test #3: test-ipmap .......................   Passed    0.01 sec
+    Start 4: test-ipset
+4/5 Test #4: test-ipset .......................   Passed    0.02 sec
+    Start 5: test-iterator
+5/5 Test #5: test-iterator ....................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.04 sec
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+ fakeroot debian/rules binary
+dh binary --with sphinxdoc
+   dh_testroot
+   dh_prep
+   dh_auto_install
+	make -j1 install DESTDIR=/home/jiang/flinttest/build-area/libcorkipset-1.1.1\+20150311/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+/usr/bin/cmake -H/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 -B/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f docs/CMakeFiles/doc.dir/build.make docs/CMakeFiles/doc.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/CMakeFiles/doc.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f docs/CMakeFiles/doc.dir/build.make docs/CMakeFiles/doc.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[  2%] Building HTML documentation with Sphinx
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs && /usr/bin/sphinx-build -b html -d /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/_doctrees -c /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/docs /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/docs/html
+Running Sphinx v1.3.6
+loading pickled environment... done
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 0 source files that are out of date
+updating environment: 0 added, 0 changed, 0 removed
+looking for now-outdated files... none found
+no targets are out of date.
+build succeeded.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[  2%] Built target doc
+make -f src/CMakeFiles/libcorkipset.dir/build.make src/CMakeFiles/libcorkipset.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/libcorkipset.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libcorkipset.dir/build.make src/CMakeFiles/libcorkipset.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/libcorkipset.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 53%] Built target libcorkipset
+make -f src/CMakeFiles/ipsetdot.dir/build.make src/CMakeFiles/ipsetdot.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetdot.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetdot.dir/build.make src/CMakeFiles/ipsetdot.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/ipsetdot.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 58%] Built target ipsetdot
+make -f src/CMakeFiles/ipsetcat.dir/build.make src/CMakeFiles/ipsetcat.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetcat.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetcat.dir/build.make src/CMakeFiles/ipsetcat.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/ipsetcat.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 64%] Built target ipsetcat
+make -f src/CMakeFiles/ipsetbuild.dir/build.make src/CMakeFiles/ipsetbuild.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/src/CMakeFiles/ipsetbuild.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/ipsetbuild.dir/build.make src/CMakeFiles/ipsetbuild.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/ipsetbuild.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 69%] Built target ipsetbuild
+make -f examples/CMakeFiles/ipv4-set-size.dir/build.make examples/CMakeFiles/ipv4-set-size.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/examples /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/examples/CMakeFiles/ipv4-set-size.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f examples/CMakeFiles/ipv4-set-size.dir/build.make examples/CMakeFiles/ipv4-set-size.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'examples/CMakeFiles/ipv4-set-size.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 74%] Built target ipv4-set-size
+make -f tests/CMakeFiles/test-ipmap.dir/build.make tests/CMakeFiles/test-ipmap.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-ipmap.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-ipmap.dir/build.make tests/CMakeFiles/test-ipmap.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'tests/CMakeFiles/test-ipmap.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 79%] Built target test-ipmap
+make -f tests/CMakeFiles/test-bdd.dir/build.make tests/CMakeFiles/test-bdd.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-bdd.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-bdd.dir/build.make tests/CMakeFiles/test-bdd.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'tests/CMakeFiles/test-bdd.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 84%] Built target test-bdd
+make -f tests/CMakeFiles/test-iterator.dir/build.make tests/CMakeFiles/test-iterator.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-iterator.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-iterator.dir/build.make tests/CMakeFiles/test-iterator.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'tests/CMakeFiles/test-iterator.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 89%] Built target test-iterator
+make -f tests/CMakeFiles/test-ipset.dir/build.make tests/CMakeFiles/test-ipset.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-ipset.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-ipset.dir/build.make tests/CMakeFiles/test-ipset.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'tests/CMakeFiles/test-ipset.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[ 94%] Built target test-ipset
+make -f tests/CMakeFiles/test-assignment.dir/build.make tests/CMakeFiles/test-assignment.dir/depend
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+cd /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311 /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/tests/CMakeFiles/test-assignment.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make -f tests/CMakeFiles/test-assignment.dir/build.make tests/CMakeFiles/test-assignment.dir/build
+make[3]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'tests/CMakeFiles/test-assignment.dir/build'.
+make[3]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+[100%] Built target test-assignment
+make[2]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/file-format.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/doctools.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/pygments.css
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/searchtools.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/down-pressed.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/down.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/comment.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/default.css
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/jquery.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/sidebar.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/up.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/docco-sphinx.css
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/comment-bright.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/comment-close.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/minus.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/up-pressed.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/classic.css
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/websupport.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/file.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/ajax-loader.gif
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/basic.css
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/underscore.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_static/plus.png
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources/index.txt
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources/commands.txt
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources/sets.txt
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources/file-format.txt
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/_sources/maps.txt
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/searchindex.js
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/index.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/genindex.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/maps.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/sets.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/search.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/.buildinfo
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/objects.inv
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/share/doc/ipset/html/commands.html
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/bits.h
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/ipset.h
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/logging.h
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/errors.h
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/bdd
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/include/ipset/bdd/nodes.h
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/lib/x86_64-linux-gnu/libcorkipset.so.1.1.0
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/lib/x86_64-linux-gnu/libcorkipset.so.1
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/lib/x86_64-linux-gnu/libcorkipset.so
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetbuild
+-- Set runtime path of "/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetbuild" to ""
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetcat
+-- Set runtime path of "/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetcat" to ""
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetdot
+-- Set runtime path of "/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/bin/ipsetdot" to ""
+-- Installing: /home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/libcorkipset.pc
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311/obj-x86_64-linux-gnu'
+   debian/rules override_dh_install
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311'
+sed -i 's%#include <ipset%#include <libcorkipset%' debian/tmp/usr/include/ipset/*.h
+rm -f obj-*/docs/html/.buildinfo
+cd obj-x86_64-linux-gnu; \
+for bin in ipsetbuild ipsetcat ipsetdot; do \
+	help2man -N -n "utility of libcorkipset library" \
+		--version-string="1.1.1+20150311-7" \
+		-o $bin.1 src/$bin; \
+done
+dh_install
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311'
+   debian/rules override_dh_installdocs
+make[1]: Entering directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311'
+dh_installdocs -X.gitignore
+make[1]: Leaving directory '/home/jiang/flinttest/build-area/libcorkipset-1.1.1+20150311'
+   dh_sphinxdoc
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: Built-Using field of package libcorkipset-doc: unknown substitution variable ${sphinxdoc:Built-Using}
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'libcorkipset-utils' in '../libcorkipset-utils_1.1.1+20150311-7_amd64.deb'.
+dpkg-deb: building package 'libcorkipset-dev' in '../libcorkipset-dev_1.1.1+20150311-7_amd64.deb'.
+dpkg-deb: building package 'libcorkipset1' in '../libcorkipset1_1.1.1+20150311-7_amd64.deb'.
+dpkg-deb: building package 'libcorkipset-doc' in '../libcorkipset-doc_1.1.1+20150311-7_all.deb'.
+ dpkg-genchanges  >../libcorkipset_1.1.1+20150311-7_amd64.changes
+dpkg-genchanges: not including original source code in upload
+ dpkg-source -i -I --after-build libcorkipset-1.1.1+20150311
+dpkg-source: info: unapplying 0010-fix-typo-in-src-CMakeLists.txt.patch
+dpkg-source: info: unapplying 0009-support-cmake-threads.patch
+dpkg-source: info: unapplying 0008-setup-docs-folder-and-make-index-works.patch
+dpkg-source: info: unapplying 0007-checkout-sphinx-style-docs-CMakeLists.txt.patch
+dpkg-source: info: unapplying 0006-Revert-Remove-old-Sphinx-documentation-template.patch
+dpkg-source: info: unapplying 0005-add-library-multi-arch-support.patch
+dpkg-source: info: unapplying 0004-update-test-of-python-cram-according-to-libcork.patch
+dpkg-source: info: unapplying 0003-rename-library-name-SONAME-to-libcorkipset.patch
+dpkg-source: info: unapplying 0002-fix-build-with-static-libcheck-library.patch
+dpkg-source: info: unapplying 0001-remove-dependency-on-git-command.patch
+dpkg-buildpackage: binary and diff upload (original source NOT included)
+Now running lintian...
+E: libcorkipset changes: bad-distribution-in-changes-file unstable
+W: libcorkipset source: newer-standards-version 3.9.8 (current is 3.9.7)
+Finished running lintian.

@@ -1,0 +1,43 @@
+Format: 1.8
+Date: Fri, 06 Jan 2017 00:30:16 +0900
+Source: libcork
+Binary: libcork-dev libcork16 libcork-doc
+Architecture: source amd64 all
+Version: 0.15.0+ds-11
+Distribution: unstable
+Urgency: medium
+Maintainer: Roger Shimizu <rogershimizu@gmail.com>
+Changed-By: Roger Shimizu <rogershimizu@gmail.com>
+Description:
+ libcork-dev - simple, easily embeddable, cross-platform C library (development
+ libcork-doc - simple, easily embeddable, cross-platform C library (documentatio
+ libcork16  - simple, easily embeddable, cross-platform C library
+Changes:
+ libcork (0.15.0+ds-11) unstable; urgency=medium
+ .
+   * debian/control:
+     - Set Multi-Arch of libcork-doc as foreign
+   * debian/rules:
+     - Now it's safe to set +all as hardening option
+   * debian/patches:
+     - Add a patch to fix upstream issue #120:
+         https://github.com/redjack/libcork/issues/120
+       Thanks to Max Lv <max.c.lv@gmail.com>.
+Checksums-Sha1:
+ 716db43c97cab337e992bbef657f09f3375d9aa8 1117 libcork_0.15.0+ds-11.dsc
+ 215099b263296b29204df6fc144eedfd7f84a254 10516 libcork_0.15.0+ds-11.debian.tar.xz
+ c1ce1959d43853db047a7aff09f7f9649b697276 28660 libcork-dev_0.15.0+ds-11_amd64.deb
+ c62dd7190f7080947944cd5ad40d941cca1b0307 145538 libcork-doc_0.15.0+ds-11_all.deb
+ 703601e602d94d05562df7fb8e6b9eeb0ace6ba3 34918 libcork16_0.15.0+ds-11_amd64.deb
+Checksums-Sha256:
+ 7cf4591d6161e16b23484ecbb7217f5ac7c4d1c93495166af3d5dead28024e98 1117 libcork_0.15.0+ds-11.dsc
+ 5927439f2c6a067a0ccff471890fcb629b5269bdee40f19ce179e049e1a602f1 10516 libcork_0.15.0+ds-11.debian.tar.xz
+ 62488e5ed4f925a320e68b6eb2ca6c7dcf58e0b25bc9129cd6c7764ee6098804 28660 libcork-dev_0.15.0+ds-11_amd64.deb
+ b423f5e3cbdac6f472fb94014002d7af7976c96a1578e1054389959346b579f7 145538 libcork-doc_0.15.0+ds-11_all.deb
+ 6854a0d02c1c5e548b01e7449a4aa884123067fbb777f99277bd6a550d025dda 34918 libcork16_0.15.0+ds-11_amd64.deb
+Files:
+ 908677ee8bd0c500297bda810f4fabb6 1117 libs optional libcork_0.15.0+ds-11.dsc
+ a52e06a047abf2f6eca4774594395fcb 10516 libs optional libcork_0.15.0+ds-11.debian.tar.xz
+ 36ab9b52267ea29e549b3e9d793b89ca 28660 libdevel optional libcork-dev_0.15.0+ds-11_amd64.deb
+ a278add8cb7f935557e346aff1ce1cde 145538 doc extra libcork-doc_0.15.0+ds-11_all.deb
+ e9764c10bcede556683ad17921e0cd5a 34918 libs optional libcork16_0.15.0+ds-11_amd64.deb

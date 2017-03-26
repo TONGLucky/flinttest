@@ -1,0 +1,36 @@
+Format: 1.8
+Date: Thu, 23 Feb 2017 19:31:59 +0900
+Source: libbloom
+Binary: libbloom-dev libbloom1
+Architecture: source amd64
+Version: 1.4-1~exp1
+Distribution: experimental
+Urgency: low
+Maintainer: Roger Shimizu <rogershimizu@gmail.com>
+Changed-By: Roger Shimizu <rogershimizu@gmail.com>
+Description:
+ libbloom-dev - simple and small bloom filter implementation in C (development fi
+ libbloom1  - simple and small bloom filter implementation in C
+Closes: 858026
+Changes:
+ libbloom (1.4-1~exp1) experimental; urgency=low
+ .
+   * Initial release (Closes: #858026).
+Checksums-Sha1:
+ 8a5dac0cb765ea7d68ba9b970bfa7df6d104cb34 900 libbloom_1.4-1~exp1.dsc
+ c9a1aab04d4e1f3ec48da435b394c978569a14a9 1158840 libbloom_1.4.orig.tar.xz
+ db921d132001eba3399792243966e059d2dec379 3488 libbloom_1.4-1~exp1.debian.tar.xz
+ 6a54021d457e03937b533b614f7fc1f37c1252f6 4068 libbloom-dev_1.4-1~exp1_amd64.deb
+ e74637a4fce452eb2d0d8baee0f9cd90deddf370 4714 libbloom1_1.4-1~exp1_amd64.deb
+Checksums-Sha256:
+ ec5d164181130c7a4ede097387f7a2a7ebbc2b422873e9fc4c11b56d41c1e497 900 libbloom_1.4-1~exp1.dsc
+ bd49d8b7ca84e4a451bcd2b1278ef00865fbad8b61324db5204e22a2e71de806 1158840 libbloom_1.4.orig.tar.xz
+ fa6aa9624616ae9e049cb3133e6353f859077caa1f82d387ebf2f2397942448e 3488 libbloom_1.4-1~exp1.debian.tar.xz
+ aa3ad23798bd936ef8ccb67ad86431ebb286db9b39cc371e1464c9861cbbdd68 4068 libbloom-dev_1.4-1~exp1_amd64.deb
+ c73f7f679ad6c56b62ec974d83c4811469aea31ef7e1baa6b791749bee09a2ce 4714 libbloom1_1.4-1~exp1_amd64.deb
+Files:
+ 965cbd3aa24d530d288a41efee375cdb 900 libs optional libbloom_1.4-1~exp1.dsc
+ d5a8d1cf248e495935867ad2424bd051 1158840 libs optional libbloom_1.4.orig.tar.xz
+ 62f9bc116f6512f00716c62b741bd475 3488 libs optional libbloom_1.4-1~exp1.debian.tar.xz
+ a6c753f024106c65501d1f23b93bffa8 4068 libdevel optional libbloom-dev_1.4-1~exp1_amd64.deb
+ 7b61f4127c08c905f6f15cc229783a8d 4714 libs optional libbloom1_1.4-1~exp1_amd64.deb

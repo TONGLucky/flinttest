@@ -1,0 +1,12 @@
+{
+    "server": "0.0.0.0",
+    "server_port": 19175,
+    "local_address": "127.0.0.1",
+    "local_port": 1080,
+    "username": "root",
+    "password": "h5C$Ct(5cRYCh5q-",
+    "timeout": 300,
+    "method":"aes-256-cfb",
+    "fast_open": false,
+    "workers": 1
+}

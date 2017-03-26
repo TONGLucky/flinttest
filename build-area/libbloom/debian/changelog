@@ -1,0 +1,5 @@
+libbloom (1.4-1~exp1) experimental; urgency=low
+
+  * Initial release (Closes: #858026).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 23 Feb 2017 19:31:59 +0900

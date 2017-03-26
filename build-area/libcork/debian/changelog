@@ -1,0 +1,153 @@
+libcork (0.15.0+ds-11) unstable; urgency=medium
+
+  * debian/control:
+    - Set Multi-Arch of libcork-doc as foreign
+  * debian/rules:
+    - Now it's safe to set +all as hardening option
+  * debian/patches:
+    - Add a patch to fix upstream issue #120:
+        https://github.com/redjack/libcork/issues/120
+      Thanks to Max Lv <max.c.lv@gmail.com>.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 06 Jan 2017 00:30:16 +0900
+
+libcork (0.15.0+ds-10~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 23 Nov 2016 23:10:55 +0900
+
+libcork (0.15.0+ds-10) unstable; urgency=medium
+
+  * debian/control:
+    - Make use of dh_sphinxdoc to calculate the dependency of js library
+    - Add Built-Using according to Bug#836248.
+  * debian/rules:
+    - Make use of dh_sphinxdoc to replace/remove libjs-sphinxdoc js libraries.
+      Mathjax related replacement is left as before since it's not included
+      in libjs-sphinxdoc, yet. See Bug#739300.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sun, 20 Nov 2016 19:38:32 +0900
+
+libcork (0.15.0+ds-9) unstable; urgency=medium
+
+  * debian/control:
+    - make use of libjs-jquery and libjs-underscore in Debian archive,
+      and remove embedded .js libraries.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 26 Oct 2016 22:12:00 +0900
+
+libcork (0.15.0+ds-9~exp1) experimental; urgency=medium
+
+  * debian/patches:
+    - Add 0013 patch to fix unaligned access issue found on sparc64 arch
+      Thanks to James Clarke <jrtc27@jrtc27.com>.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 21 Oct 2016 20:25:41 +0900
+
+libcork (0.15.0+ds-8) unstable; urgency=medium
+
+  * debian/patches:
+    - Add 0012 patch to bump libcork version to 16.0.2
+      (Closes: #841267)
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 19 Oct 2016 19:09:44 +0900
+
+libcork (0.15.0+ds-7) unstable; urgency=medium
+
+  * debian/copyright:
+    - Update field: Upstream-Contact
+    - Update field: Files-Excluded
+  * debian/control:
+    - Bump debhelper level to 10 (previous was 9.20160403,
+      feature equivalent to 10, so no change required).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Tue, 18 Oct 2016 22:15:36 +0900
+
+libcork (0.15.0+ds-7~exp1) experimental; urgency=medium
+
+  * debian/control:
+    - Bump up libcork SONAME to libcork16
+  * debian/patches:
+    - Add 0011 patch, to make SONAME version the same as library version
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 14 Oct 2016 01:58:54 +0900
+
+libcork (0.15.0+ds-6~bpo8+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 05 Oct 2016 01:15:01 +0900
+
+libcork (0.15.0+ds-6) unstable; urgency=medium
+
+  * debian/patches:
+    - Add 0010 patch, to resolve test timeout of bitset case
+  * debian/rules:
+    - Remove tmp file for rebuild in -doc package
+  * debian/source.lintian-overrides:
+    - Add lintian overrides: false positive
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Mon, 25 Jul 2016 00:43:18 +0900
+
+libcork (0.15.0+ds-5) unstable; urgency=medium
+
+  * debian/patches:
+    - Update 0005 patch, to fix build error on ubuntu yakkety.
+      Thanks previous patch from Gianfranco Costamagna.
+  * debian/rules:
+    - Remove "--builddirectory=build"
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 14 Jul 2016 18:50:30 +0900
+
+libcork (0.15.0+ds-4) unstable; urgency=medium
+
+  * debian/patches:
+    - Update 0001 patch, to use full debian version from changelog
+    - Remove 0002 patch, re-order rest of patches
+    - Update 0005 patch, to fix multi-arch support
+    - Add a patch to fix a bit on library pkg-config file
+    - Add a patch to fix hash test result for big-endian 64bit
+  * debian/rules:
+    - Set hardening from "+all" to "-pie,+all" to avoid building issue
+      on armel
+    - Cleanup
+  * debian/compat:
+    - Upgrade from 9 to 10
+  * debian/control:
+    - Update multi-arch support. Sorry for the missing in previous release
+    - Raise build-dependency debhelper >= 9.20160403 to support compat 10
+    - Remove build-dependency on dh-exec
+    - Move libcork-doc to extra, due to it depends on extra library
+  * debian/*.install:
+    - Remove dh-exec hack on multi-arch
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 07 Jul 2016 11:47:13 +0200
+
+libcork (0.15.0+ds-3) unstable; urgency=medium
+
+  * debian/patches:
+    - Add build support for kFreeBSD and GNU/Hurd. Thanks to Aaron M. Ucko.
+      (Closes: #826263)
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sun, 19 Jun 2016 00:39:27 +0900
+
+libcork (0.15.0+ds-2) unstable; urgency=medium
+
+  * debian/control:
+    - Add "Suggests" to libcork-dev. Thanks to Gianfranco Costamagna,
+      and Ben Finney. (Closes: #826835)
+    - Add dh-exec as build dependency to support multi-arch install
+  * debian/*.install:
+    Use dh-exec to support multi-arch install
+  * debian/patches:
+    - Add a patch from upstream's develop branch to fix build on 32-bit system
+    - Add a patch to support multi-arch library
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 16 Jun 2016 22:18:43 +0900
+
+libcork (0.15.0+ds-1) unstable; urgency=medium
+
+  * Initial release (Closes: #825206)
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 19 May 2016 02:00:36 +0900
